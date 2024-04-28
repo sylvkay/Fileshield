@@ -14,7 +14,7 @@ https://documenter.getpostman.com/view/9070802/2sA35LX194
    
 - Clone the repository to your local machine.
 ```
-$ git clone ""
+$ git clone https://github.com/sylvkay/Fileshield.git
 ```
 
 - Change directory into the project directory.
