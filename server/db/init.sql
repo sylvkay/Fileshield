@@ -1,0 +1,24 @@
+-- Create users table
+CREATE TABLE IF NOT EXISTS users (
+  id SERIAL PRIMARY KEY,
+  username VARCHAR(50) NOT NULL,
+  email VARCHAR(100) NOT NULL,
+  password VARCHAR(100) NOT NULL,
+  created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Create file_metadata table
+CREATE TABLE IF NOT EXISTS file_metadata (
+  id SERIAL PRIMARY KEY,
+  user_id INT REFERENCES users(id) ON DELETE CASCADE,
+  file_name VARCHAR(255) NOT NULL,
+
+  file_size VARCHAR(255) NOT NULL,
+
+  cloud_url VARCHAR(500) NOT NULL,
+  cloud_provider VARCHAR(50) NOT NULL, 
+  encryption_method VARCHAR(50) NOT NULL,
+  created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);

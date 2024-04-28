@@ -1,0 +1,24 @@
+{
+    "name": "fileshield",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "heroku-postbuild": "npm run build  --w @fileshield/server",
+      "install" : "npm run client && npm run server",
+      "dev": "npm run start",
+      "client" : "cd client && npm install",
+      "server" : "cd server && npm install",
+      "start": "npm run start-client && npm run start-server",
+      "start-client": "cd client && npm run dev",
+      "start-server": "cd server && npm run dev",
+      "deploy": "npm run build --w @fileshield/client && npm run dev --w @fileshield/server",
+      "storage" : "cd storage && node storage.js" 
+    },
+    "workspaces": [
+      "packages/*"
+    ],
+    "author": "fileshield team",
+    "license": "MIT"
+  }
